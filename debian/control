@@ -1,0 +1,22 @@
+Source: bubba-halt
+Section: admin
+Priority: standard
+Maintainer: Charles Leclerc <leclerc.charles@gmail.com>
+Build-Depends: debhelper (>= 7.2)
+Standards-Version: 3.8.4
+
+Package: bubba-halt
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: write-magic
+Description: bubba-halt adds an initscript triggered in runlevel 0
+ which write the magic value needed for board shutdown into nvram 
+ and switch to runlevel 6.
+
+Package: write-magic
+Architecture: armel
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: write-magic is a small binary for the B3 platform which
+ writes arbitrary 32-bit int value into board nvram. It is intended
+ to be used during system shutdown to indicate u-boot to stop the
+ board after reset. 

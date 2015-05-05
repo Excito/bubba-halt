@@ -1,0 +1,5 @@
+#!/bin/sh
+
+if [ "$1" = "purge" ] ; then
+	update-rc.d bubba-halt remove >/dev/null
+fi

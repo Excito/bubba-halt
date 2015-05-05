@@ -1,0 +1,5 @@
+#!/bin/sh
+
+if [ -x "/etc/init.d/bubba-halt" ]; then
+	update-rc.d bubba-halt stop 00 0 >/dev/null
+fi
